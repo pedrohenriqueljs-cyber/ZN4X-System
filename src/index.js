@@ -93,3 +93,15 @@ process.on("uncaughtException", (err) => {
 });
 
 client.login(config.token);
+
+const express = require("express")
+const app = express()
+
+app.get("/", (req, res) => {
+  res.send("ZN4X-System online")
+})
+
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
+  console.log("Web server rodando na porta " + PORT)
+})
